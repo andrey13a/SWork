@@ -37,7 +37,7 @@
 <div>
   <h2>Estagio 1 - Gerenciamento de ferramentas</h2>
   <br>
-	<span>Diagrama = </span><a href="estagio1-image.png">Estagio 1</a><br><br>
+	<span>Diagrama = </span><a href="estagio1-excalimage.png">Estagio 1</a><br><br>
   <p>
   <b>Negocio:</b>
   <br>Gerenciar o controle de ferramentas nos locais de trabalho.
