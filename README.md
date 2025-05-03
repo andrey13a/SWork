@@ -5,31 +5,23 @@
 <br>
 <br><br>
 <div>
-	<p>
-		<b>Diagramas:</b>
-	<ul>
-		<li><a href="https://excalidraw.com/#json=kTAp5SwzSIc4253NQkJ8B,Gu1_0uzelE7VDyOhndgZRA">Excalidrawn</a></li>
-		<li><a href="Badroute">Casos de uso</a></li>
-	</ul>
+	<h2>Negocio</h2>
+		<p>Auxiliar no gerenciamento de empresa do ramo <i>Construção civil</i>, atuando no controle de Materiais, Funcionários e Locais de trabalho.</p>
+	<p><b>Regras do negocio:</b>
+		<ol separator="-">
+    	<li>Gerenciar ferramentas nos locais de trabalho</li>
+    	<li>Gerenciar funcionarios nos locais de trabalho</li>
+    	<li>Gerenciar o andamento do trabalho nos locais de trabalho</li>
+		</ol>
 	</p>
-	<p>
-  	<b>Descrição do projeto:</b>
-  	<br>Software criado para auxiliar no gerenciamento de empresa do ramo <i>Construção civil</i>.
-  </p>
-  <p>
-    <b>Observações do projeto:</b>
-    <br>Desenvolvimento feito em 3 <i>estágios principais</i>, contendo sua etapas subsequentes para cada estágio.</i>
-  </p>
-  <p>
-    <b>Regras de Negocio:</b>
-    <br>Gerenciar ferramentas nos locais de trabalho.
-    <br>Gerenciar funcionarios nos locais de trabalho.
-    <br>Gerenciar o andamento do trabalho nos locais.
-  </p>
 </div>
 <div>
-<h2>Padrão de projeto</h2>
-		<p>
+	<h2>Padrão de projeto</h2>
+	<p>
+  	<b>Descrição do projeto:</b>
+    <br>Desenvolvimento feito em 3 <i>estágios principais</i>, contendo sua etapas subsequentes para cada estágio.</i>
+  </p>
+	<p>
 		<b>Tecnologia utilizada:</b>
 		<br>Software feito em <i>Python 3.13.3</i>.
 		<br>Interface usando <i>Pyside6</i>.
@@ -45,6 +37,7 @@
 <div>
   <h2>Estagio 1 - Gerenciamento de ferramentas</h2>
   <br>
+	<span>Diagrama = </span><a href="estagio1-image.png">Estagio 1</a><br><br>
   <p>
   <b>Negocio:</b>
   <br>Gerenciar o controle de ferramentas nos locais de trabalho.
