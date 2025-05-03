@@ -39,19 +39,20 @@
   <br>
 	<span>Diagrama = </span><a href="estagio1-excalimage.png">Estagio 1</a><br><br>
   <p>
-  <b>Negocio:</b>
-  <br>Gerenciar o controle de ferramentas nos locais de trabalho.
+  	<b>Negocio:</b>
+  	<br>Gerenciar o controle de ferramentas nos locais de trabalho.
   </p>
   <p>
-  <b>Descrição:</b>
-  <br>Utiliza do cadastramento para gerenciar o controle total de ferramentas.
-  <br>Ferramentas cadastradas são adicionadas a um local de trabalho.
-  <br>Necessário que os locais já tenham sido cadastrados.
-  <br>Ao transferir uma ferramenta a um local de trabalho, a mesma entrará em transito; Sendo necessário confirmar a chegada ao local.
-  <br>Ferramentas em transito ficarão aninhadas na janela inicial, aguardando a confimação de chegada.
+  	<b>Descrição:</b>
+  	<br>Utiliza do cadastramento para gerenciar o controle total de ferramentas.
+  	<br>Ferramentas cadastradas são adicionadas a um local de trabalho.
+  	<br>Necessário que os locais já tenham sido cadastrados.
+  	<br>Ao transferir uma ferramenta a um local de trabalho, a mesma entrará em transito; Sendo necessário confirmar a chegada ao local.
+  	<br>Ferramentas em transito ficarão aninhadas na janela inicial, aguardando a confimação de chegada.
   </p>
   <p>
-  <b>Como usar:</b>
+  	<b>Como usar:</b>
+		<br>Em andamento...
   </p>
   <p align=center><b>Propriedades:</b></p>
             
