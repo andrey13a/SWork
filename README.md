@@ -25,7 +25,7 @@
 		<b>Tecnologia utilizada:</b>
 		<br>Software feito em <i>Python 3.13.3</i>.
 		<br>Interface usando <i>Pyside6</i>.
-		<br>Banco de dados <i>Orm Sqlite3</i>.
+		<br>Banco de dados <i>Sqlite3</i>.
 	</p>
   <p>
 		<b>Arquitetura em camadas:</b>
