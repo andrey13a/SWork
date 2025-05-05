@@ -1,5 +1,6 @@
 ![Badge projeto](https://img.shields.io/badge/Projeto-Em%20Desenvolvimento-blue)
-![Badge Version](https://img.shields.io/badge/Version-0.0.01-blue)
+![Badge projeto](https://img.shields.io/badge/Software-Em%20Desenvolvimento-blue)
+![Badge Version](https://img.shields.io/badge/Version-0.0.02-blue)
 
 <h1 align=center> SWork / Simple Work </h1>
 <br>
