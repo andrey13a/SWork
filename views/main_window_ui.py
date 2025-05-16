@@ -165,20 +165,27 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.LocalsFrameTop)
 
         self.LocalsTableWidget = QTableWidget(self.LocalsPage)
-        if (self.LocalsTableWidget.columnCount() < 3):
-            self.LocalsTableWidget.setColumnCount(3)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.LocalsTableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.LocalsTableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.LocalsTableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.LocalsTableWidget.setObjectName(u"LocalsTableWidget")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.MinimumExpanding)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.LocalsTableWidget.sizePolicy().hasHeightForWidth())
         self.LocalsTableWidget.setSizePolicy(sizePolicy1)
+        self.LocalsTableWidget.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.LocalsTableWidget.setTabKeyNavigation(False)
+        self.LocalsTableWidget.setProperty(u"showDropIndicator", False)
+        self.LocalsTableWidget.setDragDropOverwriteMode(False)
+        self.LocalsTableWidget.setAlternatingRowColors(True)
+        self.LocalsTableWidget.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.LocalsTableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.LocalsTableWidget.setSortingEnabled(True)
+        self.LocalsTableWidget.setWordWrap(True)
+        self.LocalsTableWidget.setCornerButtonEnabled(True)
+        self.LocalsTableWidget.setColumnCount(0)
+        self.LocalsTableWidget.horizontalHeader().setCascadingSectionResizes(True)
+        self.LocalsTableWidget.horizontalHeader().setStretchLastSection(True)
+        self.LocalsTableWidget.verticalHeader().setVisible(False)
+        self.LocalsTableWidget.verticalHeader().setHighlightSections(False)
 
         self.verticalLayout_3.addWidget(self.LocalsTableWidget)
 
@@ -271,22 +278,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.ToolsFrameTop)
 
         self.ToolsTableWidget = QTableWidget(self.ToolsPage)
-        if (self.ToolsTableWidget.columnCount() < 7):
-            self.ToolsTableWidget.setColumnCount(7)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.ToolsTableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem9)
         self.ToolsTableWidget.setObjectName(u"ToolsTableWidget")
         self.ToolsTableWidget.setStyleSheet(u"")
         self.ToolsTableWidget.setFrameShape(QFrame.Shape.StyledPanel)
@@ -300,7 +291,7 @@ class Ui_MainWindow(object):
         self.ToolsTableWidget.setDragEnabled(False)
         self.ToolsTableWidget.setDragDropOverwriteMode(False)
         self.ToolsTableWidget.setAlternatingRowColors(True)
-        self.ToolsTableWidget.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
+        self.ToolsTableWidget.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.ToolsTableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.ToolsTableWidget.setTextElideMode(Qt.TextElideMode.ElideLeft)
         self.ToolsTableWidget.setShowGrid(True)
@@ -309,10 +300,12 @@ class Ui_MainWindow(object):
         self.ToolsTableWidget.setWordWrap(True)
         self.ToolsTableWidget.setCornerButtonEnabled(True)
         self.ToolsTableWidget.setRowCount(0)
-        self.ToolsTableWidget.setColumnCount(7)
+        self.ToolsTableWidget.setColumnCount(0)
         self.ToolsTableWidget.horizontalHeader().setVisible(True)
+        self.ToolsTableWidget.horizontalHeader().setCascadingSectionResizes(True)
         self.ToolsTableWidget.horizontalHeader().setHighlightSections(False)
-        self.ToolsTableWidget.verticalHeader().setVisible(True)
+        self.ToolsTableWidget.horizontalHeader().setStretchLastSection(True)
+        self.ToolsTableWidget.verticalHeader().setVisible(False)
         self.ToolsTableWidget.verticalHeader().setHighlightSections(False)
         self.ToolsTableWidget.verticalHeader().setProperty(u"showSortIndicator", False)
 
@@ -404,21 +397,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.ViewLocalFrameTop)
 
         self.ViewLocalTableWidget = QTableWidget(self.ViewLocalPage)
-        if (self.ViewLocalTableWidget.columnCount() < 6):
-            self.ViewLocalTableWidget.setColumnCount(6)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.ViewLocalTableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem15)
         self.ViewLocalTableWidget.setObjectName(u"ViewLocalTableWidget")
+        self.ViewLocalTableWidget.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.ViewLocalTableWidget.setTabKeyNavigation(False)
+        self.ViewLocalTableWidget.setProperty(u"showDropIndicator", False)
+        self.ViewLocalTableWidget.setDragDropOverwriteMode(False)
+        self.ViewLocalTableWidget.setAlternatingRowColors(True)
+        self.ViewLocalTableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.ViewLocalTableWidget.setSortingEnabled(False)
+        self.ViewLocalTableWidget.setColumnCount(0)
+        self.ViewLocalTableWidget.horizontalHeader().setCascadingSectionResizes(True)
+        self.ViewLocalTableWidget.horizontalHeader().setDefaultSectionSize(100)
+        self.ViewLocalTableWidget.horizontalHeader().setStretchLastSection(True)
+        self.ViewLocalTableWidget.verticalHeader().setVisible(True)
 
         self.verticalLayout_4.addWidget(self.ViewLocalTableWidget)
 
@@ -477,13 +468,12 @@ class Ui_MainWindow(object):
 
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.BodyWidget.setCurrentIndex(0)
-
         self.retranslateUi(MainWindow)
 
+        self.BodyWidget.setCurrentIndex(2)
+
+
         QMetaObject.connectSlotsByName(MainWindow)
-
-
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -507,7 +497,7 @@ class Ui_MainWindow(object):
         self.ButtonTransferirViewLocal.setText(QCoreApplication.translate("MainWindow", u"Transferir", None))
         self.ButtonEditarViewLocal.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
         self.ButtonAdicionarViewLocal.setText(QCoreApplication.translate("MainWindow", u"Adicionar", None))
-        self.LabelVersion.setText(QCoreApplication.translate("MainWindow", u"Open Source | test version 1.0 | in progress...", None))
+        self.LabelVersion.setText(QCoreApplication.translate("MainWindow", u"Open Source | test version 0.6 | in progress...", None))
         self.ButtonContato.setText(QCoreApplication.translate("MainWindow", u"Contato", None))
         self.ButtonSuporte.setText(QCoreApplication.translate("MainWindow", u"Suporte", None))
     # retranslateUi

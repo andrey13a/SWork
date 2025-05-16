@@ -369,8 +369,9 @@ class Ui_DialogTool(object):
         marca = str(self.ComboboxToolMarca.currentText()).lower()
         modelo = str(self.TextInputToolModelo.text()).lower()
         condicao = str(self.ComboBoxToolCondicao.currentText()).lower()
+        local = str(self.ComboBoxToolLocal.currentText().lower)
 
-        data = (id, tipo, tensao, marca, modelo, condicao)
+        data = (id, tipo, tensao, marca, modelo, condicao, local)
         return data
 
     def close_dialog(self):
