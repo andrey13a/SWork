@@ -19,7 +19,6 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
 
-
         self.setupUi(self)
         self.dialog_tool = DialogTool()
         self.dialog_local = DialogLocal()
@@ -30,14 +29,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.local_repository = LocalRepository()
         self.local_service = LocalService(self.local_repository)
 
-        # Objetos para trabalhar
-        self.local_service.add_local("Alameda do ferro", "Jose")
-        self.local_service.add_local("Avenida stuart litle", "Raimundo")
-
-        self.tool_service.add_tool("0101", "Furadeira", "110v", "Dewalt", "zc1000", "Funcionando")
-        self.tool_service.add_tool("2501", "Maquina de solda", "220v", "Arcweld", "Box1000", "Funcionando")
-        self.tool_service.add_tool("0110", "Esmerilhadeira", "110v", "Bosch", "b490", "Com defeito")
-
+        # Preload
+        self.BodyWidget.setCurrentIndex(0)
+        #self.load_table_locals()
+        #self.load_table_tools()
+        #self.load_all_combobox()
 
         # tools page connections
         self.ButtonAdicionarTools.clicked.connect(self.show_dialog_tool_add_mode)
@@ -51,26 +47,56 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         # dialog local connections
         self.dialog_local.ButtonDialogLocalFinalizar.clicked.connect(self.save_data_dialog_local)
 
-                # Linking menu functions
+        # Linking menu functions
         self.ButtonInicio.clicked.connect(self.open_home_page)
         self.ButtonLocais.clicked.connect(self.open_local_page)
         self.ButtonFerramentas.clicked.connect(self.open_tools_page)
 
-    # Tools Functions
+        # Testes
+        self.ToolsTableWidget.itemDoubleClicked.connect(self.toolduploclique)
+        self.LocalsTableWidget.itemDoubleClicked.connect(self.localduploclique)
+
+    def toolduploclique(self):
+        linha = self.ToolsTableWidget.currentRow()
+        coluna = self.ToolsTableWidget.currentColumn()
+        print(self.ToolsTableWidget.item(linha, 0).text())
+    
+    def localduploclique(self):
+        linha = self.LocalsTableWidget.currentRow()
+        coluna = self.LocalsTableWidget.currentColumn()
+        print(self.LocalsTableWidget.item(linha, 0).text())
+
+    # Load Tables
     def load_table_tools(self):
         # load table widget tools
         self.ToolsTableWidget.clear()
-        self.ToolsTableWidget.setColumnCount(len(self.tool_repository.atributos))
+        self.ToolsTableWidget.setColumnCount(len(ToolRepository.atributos))
+        self.ToolsTableWidget.setHorizontalHeaderLabels(ToolRepository.atributos)
         self.ToolsTableWidget.setRowCount(len(self.tool_service.get_tools()))
-        self.ToolsTableWidget.setHorizontalHeaderLabels(self.tool_repository.atributos)
         for i,item in enumerate(self.tool_service.get_tools()):
-            self.ToolsTableWidget.setItem(i,0,QTableWidgetItem(item.id))
+            self.ToolsTableWidget.setItem(i,0,QTableWidgetItem(str(item.id)))
             self.ToolsTableWidget.setItem(i,1,QTableWidgetItem(item.tipo))
             self.ToolsTableWidget.setItem(i,2,QTableWidgetItem(item.tensao))
             self.ToolsTableWidget.setItem(i,3,QTableWidgetItem(item.marca))
             self.ToolsTableWidget.setItem(i,4,QTableWidgetItem(item.modelo))
             self.ToolsTableWidget.setItem(i,5,QTableWidgetItem(item.condicao))
+    
+    def load_table_locals(self):
+        self.LocalsTableWidget.clear()
+        self.LocalsTableWidget.setColumnCount(len(LocalRepository.atributos))
+        self.LocalsTableWidget.setHorizontalHeaderLabels(LocalRepository.atributos)
+        self.LocalsTableWidget.setRowCount(len(self.local_service.get_locals()))
+        for i, item in enumerate(self.local_service.get_locals()):
+            self.LocalsTableWidget.setItem(i, 0, QTableWidgetItem(str(item.id)))
+            self.LocalsTableWidget.setItem(i, 1, QTableWidgetItem(item.nome))
+            self.LocalsTableWidget.setItem(i, 2, QTableWidgetItem(item.responsavel))
 
+    def load_all_combobox(self):
+        for i in self.local_repository.locals:
+            self.dialog_tool.ComboBoxToolLocal.addItem(i.nome)
+        for i in self.tool_repository.tools:
+            self.dialog_tool.ComboBoxToolTipo.addItem(i.tipo)
+            self.dialog_tool.ComboboxToolMarca.addItem(i.marca)
 
     # Dialog Tool Functions
     def show_dialog_tool_add_mode(self):
@@ -79,11 +105,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     
     def save_data_dialog_tool(self):
         data = self.dialog_tool.get_inputs()
-        self.tool_service.add_tool(data[0], data[1], data[2], data[3], data[4], data[5])
+        self.tool_service.add_tool(data[0], data[1], data[2], data[3], data[4], data[5], data[6])
         self.dialog_tool.clear_inputs()
         self.load_table_tools()
         self.dialog_tool.close()
-
 
     # Dialog Local Functions
     def show_dialog_local_add_mode(self):
@@ -91,16 +116,17 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     
     def save_data_dialog_local(self):
         data = self.dialog_local.get_inputs()
-        self.local_service.add_local(data[0], data[1])
         self.dialog_local.clear_inputs()
+        self.local_service.add_local(data[0], data[1])
+        self.load_table_locals()
+        self.dialog_local.close()
 
-        print(self.local_service.get_locals())
-    
         # Menu Functions
     def open_home_page(self):
         self.BodyWidget.setCurrentIndex(0)
     
     def open_local_page(self):
+        self.load_table_locals()
         self.BodyWidget.setCurrentIndex(1)
 
     def open_tools_page(self):
@@ -110,7 +136,6 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     def open_view_local(self):
         self.BodyWidget.setCurrentIndex(3)
 
-    
 
 # Initialize dialog tool window
 class DialogTool(QDialog, Ui_DialogTool):
