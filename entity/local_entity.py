@@ -3,8 +3,8 @@
 
 class Local:
 
-    def __init__(self, nome=str, responsavel=str):
-        self.id = None
+    def __init__(self, id=str, nome=str, responsavel=str):
+        self.id = id
         self.nome = nome
         self.responsavel = responsavel
     
